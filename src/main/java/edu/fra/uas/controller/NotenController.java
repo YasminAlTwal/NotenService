@@ -57,21 +57,21 @@ public class NotenController {
     @RequestMapping(value = { "/add" }, method = RequestMethod.GET)
     public String add() {
         log.debug("add() is called");
-        return "add.html";
+        return "add.html"; //add.html exisitiert nicht in den templates => musst eine neue Html-Datei anlegen.
 
     }
-    // http://127.0.0.1/add?fach=mathematik&note=1
+
     @RequestMapping(value = {"/added"}, method = RequestMethod.GET)
-    public String add(@RequestParam("fach") String fach, 
+    public String added(@RequestParam("fach") String fach, 
                       @RequestParam("note") int note, 
                       Model model) {
         log.debug("add() is called");
-        Noten noten = new Noten();
-        noten.setFach(fach);
-        noten.setNote(note);
-        notenService.createNoten(noten);
-        model.addAttribute("noten", noten);
-        return "added.html";
+        Noten neueNote = new Noten();
+        neueNote.setFach(fach);
+        neueNote.setNote(note);
+        notenService.createNoten(neueNote);
+        model.addAttribute("note", neueNote);
+        return "added.html"; 
     }
 
     // http://127.0.0.1/update
@@ -84,7 +84,7 @@ public class NotenController {
     // http://127.0.0.1/updated?id=2&fach=englisch&note=2
     @RequestMapping(value = {"/updated"}, method = { RequestMethod.GET, RequestMethod.POST })
     public String update(@RequestParam("id") Long notenId, 
-                         @RequestParam("Fach") String fach, 
+                         @RequestParam("fach") String fach, 
                          @RequestParam("note") int note, 
                          Model model) {
         log.debug("updated() is called");
