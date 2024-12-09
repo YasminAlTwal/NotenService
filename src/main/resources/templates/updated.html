@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Note aktualisiert</title>
+    </head>
+    <body>
+        <h1>Note aktualisiert</h1>
+        <p>Note ID: <b th:text="${grade.id}">id</b></p>
+        <p>Fach: <b th:text="${grade.subject}">fach</b></p>
+        <p>Note: <b th:text="${grade.grade}">note</b></p>
+        <br/>
+        <a href="/list">Zurück zur Notenliste</a>
+        <footer>
+            <small id="today"></small>
+        </footer>
+        <script>
+            var date = new Date();
+            var year = date.getFullYear();
+            document.getElementById("today").innerHTML = "&copy; FRA-UAS MVC Beispiel, " + year;
+        </script> 
+    </body>
+</html>

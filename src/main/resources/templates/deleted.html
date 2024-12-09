@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>User deleted</title>
+    </head>
+    <body>
+        <h1>Noten deleted</h1>
+        <p>User ID: <b th:text="${noten.id}">id</b></p>
+        <p>Fach: <b th:text="${noten.fach}">fach</b></p>
+        <p>: Note<b th:text="${noten.note}">note</b></p>
+        <br/>
+        <a href="/list">Back to user list</a>
+        <footer>
+            <small id="today"></small>
+        </footer>
+        <script>
+            var date = new Date();
+            var year = date.getFullYear();
+            document.getElementById("today").innerHTML = "&copy; FRA-UAS MVC Example, "+year;
+        </script> 
+    </body>
+</html>

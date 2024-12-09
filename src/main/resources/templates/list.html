@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste der Noten</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Liste der Noten</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>fach</th>
+                    <th>note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="noten : ${Noten}">
+                    <tr>
+                    <td th:text="${noten.id}">id</td>
+                    <td th:text="${noten.fach}">fach</td>
+                    <td th:text="${noten.note}">note</td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <footer>
+            <small id="today"></small>
+        </footer>
+        <script>
+            var date = new Date();
+            var year = date.getFullYear();
+            document.getElementById("today").innerHTML = "&copy; FRA-UAS MVC Beispiel, " + year;
+        </script> 
+    </body>
+</html>
