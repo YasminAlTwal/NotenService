@@ -2,14 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>User deleted</title>
+        <link rel="stylesheet" type="text/css" href="/css/basic.css">
     </head>
     <body>
         <h1>Noten deleted</h1>
-        <p>User ID: <b th:text="${noten.id}">id</b></p>
-        <p>Fach: <b th:text="${noten.fach}">fach</b></p>
-        <p>: Note<b th:text="${noten.note}">note</b></p>
+        <!--Auch hier der Variable name "noten" hast du nicht im Controller übergeben sondern nur "note"-->
+        <p>User ID: <b th:text="${note.id}">id</b></p>
+        <p>Fach: <b th:text="${note.fach}">fach</b></p>
+        <p>: Note<b th:text="${note.note}">note</b></p>
         <br/>
-        <a href="/list">Back to user list</a>
+        <a href="/" class="back-link">Zurück zur Startseite</a>
         <footer>
             <small id="today"></small>
         </footer>

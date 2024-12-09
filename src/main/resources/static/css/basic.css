@@ -1,43 +1,241 @@
-h1{
-    text-align: center;
-    margin-top: 0px;
-    color: #66b7f5;
+/* Hier erstelle ich eine Grundlage für meine Html Dateien, um sie ansehlicher machen und packe die basics.css in die Html dateien in den Header */
+
+/* Grundlegender Seitenstil */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1f2a3a, #2a3b53);
+  /* Dunklere Farbpalette für den modernen Look */
+  color: #d8dee9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Vertikale Zentrierung */
+  min-height: 100vh;
+  overflow: hidden;
 }
 
+/* Überschrift */
+h1 {
+  font-size: 3.8rem;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #00f1ff;
+  /* LED-inspiriert: Cyan-Farbe */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #00bcd4;
+  /* Blaugrüner Farbton */
+  padding-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  /* LED-Lichteffekt */
+}
+
+/* Container */
 .container {
-    position: relative;
-    width: 50%;
-  }
-
-.image{
-    display: block;
+  background: rgba(36, 45, 60, 0.85);
+  /* Dunkles, halbtransparentes Grau */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Zentrierte Ausrichtung */
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 25%;
-    width: 25%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
+/* Formulare */
+form {
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #eceff4;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #4c566a;
+  border-radius: 8px;
+  background: #3b4252;
+  color: #eceff4;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00f1ff;
+  /* Cyan-Farbe */
+  box-shadow: 0 0 8px #00f1ff;
+}
+
+/* Buttons */
+button {
+  background: #00f1ff;
+  color: #2e3440;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  background: #00bcd4;
+  /* LED-like hover effect */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 191, 255, 0.6);
+  /* LED hover glow */
+}
+
+/* Tabellen */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #3b4252;
+  color: #eceff4;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table thead {
+  background: #00bcd4;
+  /* LED-Cyan */
+  color: #2e3440;
+  text-transform: uppercase;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #4c566a;
+}
+
+table tr:hover {
+  background: rgba(0, 191, 255, 0.1);
+  /* LED Hover-Effekt für Zeilen */
+}
+
+/* Stichpunkte */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+ul li {
+  font-size: 1.1rem;
+  color: #eceff4;
+  position: relative;
+  padding-left: 35px;
+  display: flex;
+  align-items: center;
+}
+
+ul li:before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background: #00f1ff;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  /* LED Leuchteffekt */
+}
+
+/* Container für das Bild */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  height: 300px;
+  /* Optional, um einen festen Bereich für das Bild zu schaffen */
+}
+
+/* Bildstil */
+.custom-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  /* Abgerundete Ecken */
+  box-shadow: 0 5px 25px rgba(0, 255, 255, 0.3);
+  /* LED-Glüh-Effekt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+/* Hover-Effekt */
+.custom-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 45px rgba(0, 255, 255, 0.5);
+  /* Mehr glühen beim Hover */
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+  /* LED Glow beim Hover */
+}
+
+/* Links */
+a {
+  color: #00f1ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00bcd4;
+  /* Cyan LED hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
   }
 
-  .container:hover .overlay {
-    opacity: 1;
+  h1 {
+    font-size: 2.5rem;
   }
-  
-  .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+
+  table th,
+  table td {
+    padding: 12px;
   }
+}

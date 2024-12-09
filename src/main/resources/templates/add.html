@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Hinzufügen</title>
+    <link rel="stylesheet" type="text/css" href="/css/basic.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Note Hinzufügen</h1>
+        <form action="/added" method="GET">
+            <label for="fach">Fach:</label>
+            <input type="text" id="fach" name="fach" required>
+
+            <label for="note">Note:</label>
+            <input type="number" id="note" name="note" step="0.01" required>
+
+            <button type="submit">Hinzufügen</button>
+        </form>
+        <a href="/" class="back-link">Zurück zur Startseite</a>
+    </div>
+</body>
+</html>

@@ -2,17 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Liste der Noten</title>
-        <style>
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="/css/basic.css">
     </head>
     <body>
         <h1>Liste der Noten</h1>
@@ -25,17 +15,19 @@
                 </tr>
             </thead>
             <tbody>
-                <th:block th:each="noten : ${Noten}">
+                <!-- habs bissle übersichtlicher gemacht-->
+                <th:block th:each="note : ${noten}">
                     <tr>
-                    <td th:text="${noten.id}">id</td>
-                    <td th:text="${noten.fach}">fach</td>
-                    <td th:text="${noten.note}">note</td>
+                    <td th:text="${note.id}">id</td>
+                    <td th:text="${note.fach}">fach</td>
+                    <td th:text="${note.note}">note</td>
                 </tr>
             </tbody>
         </table>
         <br/>
         <footer>
             <small id="today"></small>
+            <a href="/" class="back-link">Zurück zur Startseite</a>
         </footer>
         <script>
             var date = new Date();

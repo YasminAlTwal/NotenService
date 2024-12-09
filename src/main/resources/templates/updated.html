@@ -2,14 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Note aktualisiert</title>
+        <link rel="stylesheet" type="text/css" href="/css/basic.css">
     </head>
     <body>
         <h1>Note aktualisiert</h1>
-        <p>Note ID: <b th:text="${grade.id}">id</b></p>
-        <p>Fach: <b th:text="${grade.subject}">fach</b></p>
-        <p>Note: <b th:text="${grade.grade}">note</b></p>
+        <p>Note ID: <b th:text="${note.id}">id</b></p>
+        <p>Fach: <b th:text="${note.Fach}">fach</b></p>
+        <p>Note: <b th:text="${note.Note}">note</b></p>
         <br/>
-        <a href="/list">Zurück zur Notenliste</a>
+        <a href="/" class="back-link">Zurück zur Startseite</a>
         <footer>
             <small id="today"></small>
         </footer>
